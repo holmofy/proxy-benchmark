@@ -1,15 +1,6 @@
 version: '3.9'
 
 services:
-  test:
-    image: demisto/rakyll-hey:1.0.0.44140
-    container_name: hey
-    tty: true
-    deploy:
-      resources:
-        limits:
-          cpus: "12.0"
-          memory: 8192M
   backend:
     image: ghcr.io/lsk569937453/echo-server:0.0.3
     container_name: backend
@@ -19,7 +10,7 @@ services:
       resources:
         limits:
           cpus: "4.0"
-          memory: 8192M
+          memory: 512M
   silverwind:
     image: ghcr.io/lsk569937453/silverwind:0.0.20
     #image: lsk569937453/silverwind:test
@@ -38,4 +29,4 @@ services:
       resources:
         limits:
           cpus: "4.0"
-          memory: 8192M
+          memory: 512M
