@@ -1,13 +1,5 @@
 version: '3.9'
 services:
-  test:
-    image: demisto/rakyll-hey:1.0.0.44140
-    tty: true
-    deploy:
-      resources:
-        limits:
-          cpus: "4.0"
-          memory: 8192M
   backend:
     image: jmalloc/echo-server
     ports:
@@ -16,7 +8,7 @@ services:
       resources:
         limits:
           cpus: "4.0"
-          memory: 8192M
+          memory: 512M
   envoy:
     image: envoyproxy/envoy:v1.22.8
     ports:
@@ -27,4 +19,4 @@ services:
       resources:
         limits:
           cpus: "4.0"
-          memory: 8192M
+          memory: 512M
